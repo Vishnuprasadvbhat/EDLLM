@@ -233,7 +233,5 @@ We ensured that the incremental learning approach is integrated seamlessly with 
 
 This project leverages federated learning and incremental training to optimize the performance of LLMs while maintaining data privacy. By combining these approaches, we effectively balance global model generalization with local adaptation, enhancing both the model’s efficiency and relevance.
 
-Feel free to explore the code files for more in-depth understanding and reach out for further clarification!
-
 ---
 
