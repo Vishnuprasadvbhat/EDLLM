@@ -68,6 +68,10 @@ class TinyBertClient(fl.client.NumPyClient):
         accuracy = correct / total if total > 0 else 0.0
         avg_loss = loss_sum / total if total > 0 else 0.0
         logging.info("Model evaluation completed. Accuracy: %.4f", accuracy)
+        
+        file_name = 'clientmodel_02.pth'
+        torch.save(model.state_dict(), file_name)
+
         return float(avg_loss), len(self.test_loader.dataset), {"accuracy": accuracy}
 
     def predict_and_validate(self, user_input):

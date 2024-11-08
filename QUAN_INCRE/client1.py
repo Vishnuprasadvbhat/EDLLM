@@ -70,6 +70,10 @@ class TinyBertClient(fl.client.NumPyClient):
             accuracy = correct / total
             avg_loss = loss_sum / total
             logging.info("Model evaluation completed. Accuracy: %.4f", accuracy)
+
+            file_name = 'clientmodel_01.pth'
+            torch.save(model.state_dict(), file_name)
+            
             return float(avg_loss), len(self.test_loader.dataset), {"accuracy": accuracy}
         else:
             logging.warning("No samples in evaluation, returning zero metrics.")
